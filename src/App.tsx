@@ -299,7 +299,7 @@ function App() {
             <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-1">
               <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
                 <img 
-                  src="https://api.dicebear.com/7.x/adventurer/svg?seed=blackcat"
+                  src="https://api.dicebear.com/7.x/pixel-art/svg?seed=orange-cat"
                   alt="Profile" 
                   className="w-28 h-28 rounded-full object-cover"
                 />
