@@ -117,13 +117,19 @@ const ProjectCard = ({ project }) => (
         <Code className="w-6 h-6 text-white" />
       </div>
       {project.url ? (
-        <a 
-          href={project.url} 
-          target="_blank" 
+        <a
+          href={project.url}
+          target="_blank"
           rel="noopener noreferrer"
-          className="text-gray-400 hover:text-gray-600 transition-colors"
+          className="group relative"
+          title="访问项目"
         >
-          <ExternalLink className="w-5 h-5" />
+          <span className="absolute -top-8 right-1/2 translate-x-1/2 scale-0 group-hover:scale-100 transition-all bg-black text-white text-xs rounded px-2 py-1 pointer-events-none z-10">
+            访问项目
+          </span>
+          <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 via-purple-400 to-pink-400 shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl group-hover:rotate-12">
+            <ExternalLink className="w-5 h-5 text-white transition-transform duration-300 group-hover:rotate-45" />
+          </span>
         </a>
       ) : (
         <ExternalLink className="w-5 h-5 text-gray-300" />
@@ -296,7 +302,7 @@ function App() {
             <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-1">
               <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
                 <img 
-                  src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop&crop=face" 
+                  src="/avatar.jpg"
                   alt="Profile" 
                   className="w-28 h-28 rounded-full object-cover"
                 />
