@@ -122,11 +122,8 @@ const ProjectCard = ({ project }) => (
           target="_blank"
           rel="noopener noreferrer"
           className="group relative"
-          title="访问项目"
+          title="前往"
         >
-          <span className="absolute -top-8 right-1/2 translate-x-1/2 scale-0 group-hover:scale-100 transition-all bg-black text-white text-xs rounded px-2 py-1 pointer-events-none z-10">
-            访问项目
-          </span>
           <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 via-purple-400 to-pink-400 shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:shadow-2xl group-hover:rotate-12">
             <ExternalLink className="w-5 h-5 text-white transition-transform duration-300 group-hover:rotate-45" />
           </span>
@@ -314,7 +311,7 @@ function App() {
           </div>
 
           <h1 className="text-5xl font-bold text-gray-900 mb-4">
-            嗨，我是 <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Kim</span>
+            嗨，我是 <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">金同学Kim</span>
             {isTyping && <span className="animate-pulse">|</span>}
           </h1>
           
@@ -420,7 +417,7 @@ function App() {
         {/* Footer */}
         <footer className="text-center text-gray-500">
           <p className="mb-4">
-            © 2025 Kim. 用代码记录思考，用项目驱动成长 ☕
+            © 2025 金同学Kim. 用代码记录思考，用项目驱动成长 ☕
           </p>
           <p className="text-sm">
             "学而时习之，不亦说乎。在代码中寻找人文之美，在技术里探索表达的可能。"
