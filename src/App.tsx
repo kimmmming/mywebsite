@@ -64,22 +64,31 @@ const projects = [
   },
   {
     id: 5,
-    name: '全栈博客系统',
-    description: '从零构建的个人博客，记录编程学习历程和技术思考',
-    tags: ['Next.js', 'Node.js', 'MongoDB'],
+    name: '吵架战斗机',
+    description: '为不会吵架的人提供AI吵架话术和反击idea，助你成为社交场合的嘴强王者',
+    tags: ['AI', 'NLP', 'Fun'],
     metrics: '开发中',
     trend: 'up',
-    color: 'from-indigo-500 to-indigo-600'
+    color: 'from-yellow-500 to-yellow-600'
   },
-  {
-    id: 6,
-    name: '文科思维编程',
-    description: '用人文思维解读技术概念的教程平台，让编程更有温度',
-    tags: ['教育', '内容创作', 'Web'],
-    metrics: '构思中',
-    trend: 'stable',
-    color: 'from-pink-500 to-pink-600'
-  }
+  // {
+  //   id: 6,
+  //   name: '全栈博客系统',
+  //   description: '从零构建的个人博客，记录编程学习历程和技术思考',
+  //   tags: ['Next.js', 'Node.js', 'MongoDB'],
+  //   metrics: '开发中',
+  //   trend: 'up',
+  //   color: 'from-indigo-500 to-indigo-600'
+  // },
+  // {
+  //   id: 7,
+  //   name: '文科思维编程',
+  //   description: '用人文思维解读技术概念的教程平台，让编程更有温度',
+  //   tags: ['教育', '内容创作', 'Web'],
+  //   metrics: '构思中',
+  //   trend: 'stable',
+  //   color: 'from-pink-500 to-pink-600'
+  // }
 ];
 
 // Mock contribution data
@@ -98,7 +107,7 @@ const generateContributions = () => {
   return contributions;
 };
 
-const FloatingIcon = ({ children, className = "", delay = 0 }) => (
+const FloatingIcon = ({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) => (
   <div 
     className={`absolute text-3xl opacity-20 animate-float ${className}`}
     style={{ 
@@ -110,7 +119,7 @@ const FloatingIcon = ({ children, className = "", delay = 0 }) => (
   </div>
 );
 
-const ProjectCard = ({ project }) => (
+const ProjectCard = ({ project }: { project: typeof projects[0] }) => (
   <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100">
     <div className="flex items-start justify-between mb-4">
       <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${project.color} flex items-center justify-center`}>
@@ -137,7 +146,7 @@ const ProjectCard = ({ project }) => (
     <p className="text-gray-600 mb-4 text-sm leading-relaxed">{project.description}</p>
     
     <div className="flex flex-wrap gap-2 mb-4">
-      {project.tags.map((tag, index) => (
+      {project.tags.map((tag: string, index: number) => (
         <span 
           key={index}
           className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium"
@@ -166,10 +175,10 @@ const ProjectCard = ({ project }) => (
 
 const ContributionCalendar = () => {
   const contributions = generateContributions();
-  const weeks = [];
+  const weeks: { date: Date; count: number }[][] = [];
   
   // Group contributions by week
-  let currentWeek = [];
+  let currentWeek: { date: Date; count: number }[] = [];
   contributions.forEach((contribution, index) => {
     currentWeek.push(contribution);
     if (contribution.date.getDay() === 6 || index === contributions.length - 1) {
@@ -178,7 +187,7 @@ const ContributionCalendar = () => {
     }
   });
 
-  const getIntensity = (count) => {
+  const getIntensity = (count: number) => {
     if (count === 0) return 'bg-gray-100';
     if (count <= 1) return 'bg-green-200';
     if (count <= 2) return 'bg-green-300';
@@ -264,7 +273,7 @@ function App() {
     return () => clearInterval(interval);
   }, [isTyping]);
 
-  const handleSubscribe = (e) => {
+  const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
     alert('感谢订阅！我会定期分享学习心得和项目进展 😊');
     setEmail('');
@@ -299,7 +308,7 @@ function App() {
             <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-1">
               <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
                 <img 
-                  src="https://api.dicebear.com/7.x/pixel-art/svg?seed=orange-cat"
+                  src="https://i.ibb.co/tpfS5NgM/cats.png"
                   alt="Profile" 
                   className="w-28 h-28 rounded-full object-cover"
                 />
@@ -400,7 +409,7 @@ function App() {
             <input
               type="email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
               placeholder="输入你的邮箱地址..."
               className="flex-1 px-6 py-4 rounded-xl border-0 text-gray-900 placeholder-gray-500 focus:ring-4 focus:ring-white/30 outline-none"
               required
@@ -425,18 +434,19 @@ function App() {
         </footer>
       </div>
 
-      <style jsx>{`
+      <style>
+        {`
         @keyframes float {
           0%, 100% { transform: translateY(0px) rotate(0deg); }
           25% { transform: translateY(-10px) rotate(1deg); }
           50% { transform: translateY(-5px) rotate(-1deg); }
           75% { transform: translateY(-15px) rotate(0.5deg); }
         }
-        
         .animate-float {
           animation: float 6s ease-in-out infinite;
         }
-      `}</style>
+        `}
+      </style>
     </div>
   );
 }
