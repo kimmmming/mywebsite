@@ -69,7 +69,8 @@ const projects = [
     tags: ['AI', 'NLP', 'Fun'],
     metrics: '开发中',
     trend: 'up',
-    color: 'from-yellow-500 to-yellow-600'
+    color: 'from-yellow-500 to-yellow-600',
+    url: 'https://chaojia.kimlabs.top/'
   },
   // {
   //   id: 6,
