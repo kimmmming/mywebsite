@@ -1,1 +1,30 @@
- 
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 脸 -->
+  <ellipse cx="100" cy="120" rx="70" ry="65" fill="#FFA500"/>
+  <!-- 左耳 -->
+  <polygon points="40,60 70,20 80,70" fill="#FFA500"/>
+  <polygon points="55,55 70,30 75,65" fill="#FFD580"/>
+  <!-- 右耳 -->
+  <polygon points="160,60 130,20 120,70" fill="#FFA500"/>
+  <polygon points="145,55 130,30 125,65" fill="#FFD580"/>
+  <!-- 左眼 -->
+  <ellipse cx="75" cy="120" rx="16" ry="20" fill="#fff"/>
+  <ellipse cx="75" cy="120" rx="7" ry="10" fill="#18181b"/>
+  <!-- 右眼 -->
+  <ellipse cx="125" cy="120" rx="16" ry="20" fill="#fff"/>
+  <ellipse cx="125" cy="120" rx="7" ry="10" fill="#18181b"/>
+  <!-- 鼻子 -->
+  <polygon points="95,140 105,140 100,147" fill="#FFB6B6"/>
+  <!-- 嘴巴（3字形） -->
+  <path d="M100 147 Q102 152 108 150" stroke="#18181b" stroke-width="2" fill="none"/>
+  <path d="M100 147 Q98 152 92 150" stroke="#18181b" stroke-width="2" fill="none"/>
+  <!-- 胡须 -->
+  <path d="M60 145 Q50 147 40 143" stroke="#18181b" stroke-width="2"/>
+  <path d="M60 150 Q50 153 40 150" stroke="#18181b" stroke-width="2"/>
+  <path d="M140 145 Q150 147 160 143" stroke="#18181b" stroke-width="2"/>
+  <path d="M140 150 Q150 153 160 150" stroke="#18181b" stroke-width="2"/>
+  <!-- 橘猫条纹 -->
+  <path d="M80 80 Q100 60 120 80" stroke="#E59400" stroke-width="5" fill="none"/>
+  <path d="M70 100 Q80 90 90 100" stroke="#E59400" stroke-width="3" fill="none"/>
+  <path d="M130 100 Q120 90 110 100" stroke="#E59400" stroke-width="3" fill="none"/>
+</svg> 
