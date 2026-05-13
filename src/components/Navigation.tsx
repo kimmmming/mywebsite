@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Moon, Sun, Menu, X } from 'lucide-react';
-import { useTheme } from '../contexts/ThemeContext';
+import { useTheme } from '../contexts/useTheme';
 
 export const Navigation: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
@@ -21,14 +21,14 @@ export const Navigation: React.FC = () => {
   ];
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl shadow-soft'
-          : 'bg-transparent'
-      }`}
-    >
-      <div className="container mx-auto px-6">
+    <nav className="fixed left-0 right-0 top-0 z-50 px-4 py-3">
+      <div
+        className={`mx-auto max-w-7xl rounded-2xl border px-4 transition-all duration-300 ${
+          isScrolled || isMobileMenuOpen
+            ? 'border-gray-200 bg-white/85 shadow-soft backdrop-blur-xl dark:border-gray-800 dark:bg-gray-950/85'
+            : 'border-transparent bg-transparent'
+        }`}
+      >
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a
@@ -44,7 +44,7 @@ export const Navigation: React.FC = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                className="rounded-lg px-2 py-1 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 hover:text-primary-600 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-primary-400"
               >
                 {link.label}
               </a>
@@ -53,7 +53,7 @@ export const Navigation: React.FC = () => {
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 hover:scale-110"
+              className="rounded-xl bg-gray-100 p-2 transition-all duration-300 hover:scale-105 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700"
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? (
@@ -68,7 +68,7 @@ export const Navigation: React.FC = () => {
           <div className="md:hidden flex items-center gap-2">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-xl bg-gray-100 dark:bg-gray-800"
+              className="rounded-xl bg-gray-100 p-2 dark:bg-gray-800"
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? (
@@ -79,7 +79,7 @@ export const Navigation: React.FC = () => {
             </button>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 rounded-xl bg-gray-100 dark:bg-gray-800"
+              className="rounded-xl bg-gray-100 p-2 dark:bg-gray-800"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
@@ -93,13 +93,13 @@ export const Navigation: React.FC = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 animate-slide-up">
+          <div className="animate-slide-up border-t border-gray-100 py-3 md:hidden dark:border-gray-800">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block py-3 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                className="block rounded-xl px-3 py-3 text-gray-700 transition-colors hover:bg-gray-100 hover:text-primary-600 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-primary-400"
               >
                 {link.label}
               </a>
