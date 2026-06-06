@@ -5,6 +5,7 @@ import {
   Code,
   Coffee,
   ExternalLink,
+  Focus,
   Github,
   Lightbulb,
   Linkedin,
@@ -34,6 +35,17 @@ type Project = {
 const projects: Project[] = [
   {
     id: 1,
+    name: '对焦 · 核心资产',
+    description: '面向长辈的 A 股优质公司观察工具，用红绿灯、白话解释和回测逻辑降低财务指标阅读门槛。',
+    tags: ['Python', 'Data', 'Finance'],
+    metrics: '已上线',
+    color: 'from-lime-500 to-emerald-600',
+    url: 'https://focuscore.kimlabs.top/',
+    Icon: Focus,
+    bars: [38, 50, 58, 72, 84, 92],
+  },
+  {
+    id: 2,
     name: '健康食谱生成器',
     description: '基于 AI 的个性化健康食谱推荐系统，帮助用户制定营养均衡的饮食计划。',
     tags: ['React', 'AI', 'Health'],
@@ -44,7 +56,7 @@ const projects: Project[] = [
     bars: [34, 52, 46, 68, 74, 86],
   },
   {
-    id: 2,
+    id: 3,
     name: '猫咪头像生成器',
     description: '可爱的 AI 头像生成工具，为用户创造独特、轻松、有记忆点的猫咪形象。',
     tags: ['JavaScript', 'AI Art', 'Fun'],
@@ -55,7 +67,7 @@ const projects: Project[] = [
     bars: [42, 38, 64, 58, 72, 80],
   },
   {
-    id: 3,
+    id: 4,
     name: '智能密码生成器',
     description: '安全可靠的密码生成工具，支持多种复杂度、自定义规则和快速复制。',
     tags: ['Security', 'Tool', 'Web'],
@@ -66,7 +78,7 @@ const projects: Project[] = [
     bars: [30, 48, 62, 56, 70, 78],
   },
   {
-    id: 4,
+    id: 5,
     name: '随机天气查询器',
     description: '一个轻巧的天气查询实验，用随机地点探索世界各地的实时天气信息。',
     tags: ['API', 'Weather', 'Data'],
@@ -77,11 +89,11 @@ const projects: Project[] = [
     bars: [26, 44, 40, 60, 76, 84],
   },
   {
-    id: 5,
+    id: 6,
     name: '吵架战斗机',
     description: '为不会吵架的人提供 AI 话术和反击 idea，练习表达边界与临场反应。',
     tags: ['AI', 'NLP', 'Fun'],
-    metrics: '开发中',
+    metrics: '已上线',
     color: 'from-amber-500 to-yellow-500',
     url: 'https://chaojia.kimlabs.top/',
     Icon: Brain,
